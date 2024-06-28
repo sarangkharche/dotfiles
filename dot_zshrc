@@ -123,6 +123,14 @@ alias k=kubectl
 
 [[ -f "$HOME/fig-export/dotfiles/dotfile.zsh" ]] && builtin source "$HOME/fig-export/dotfiles/dotfile.zsh"
 
+# aws sso util login
+alias awsl='aws-sso-util login'
+
+# shhutle staging-01 login
+alias sshs='sshuttle -r "--context staging-01 --namespace kuttle kuttle-0" -e /Users/sarang.kharche/Desktop/AWS-VPN-Profiles/kuttle 172.16.0.0/16 172.22.0.0/16 172.23.0.0/16 172.24.0.0/16 172.18.0.0/16'
+
+#sshutle production-01 login
+alias sshp='sshuttle -r "--context production-01 --namespace kuttle kuttle-0" -e /Users/sarang.kharche/Desktop/AWS-VPN-Profiles/kuttle 172.19.0.0/16'
 
 # add zoxide
 #eval "$(zoxide init zsh)"
@@ -131,3 +139,6 @@ eval "$(zoxide init zsh --cmd cd)"
 
 # CodeWhisperer post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh"
+
+eval "$(starship init zsh)"
+
